@@ -5,6 +5,7 @@ export default function App(){
   let values = []
   const [firstFilled, setFirstFilled] = useState(false)
   const [operation, setOperation] = useState()
+  const [answered, setAnswered] = useState(false)
   const[slideron, setSliderOn] = useState(()=>{
     let gottenslider = JSON.parse(localStorage.getItem('sliderOn'))
     if(!gottenslider){
@@ -160,9 +161,10 @@ export default function App(){
     setFirst('')
     setSecond('')
     setFirstFilled(false)
+    setAnswered(false)
   }
   function del(){
-    if(first){
+    if(answered){
       reset()
     }else{
       setInput( input.substring(0, input.length-1))
@@ -235,6 +237,7 @@ export default function App(){
       let ans = Number(first) + Number(second)
       setInput(ans.toString())
       setSecond('')
+      setAnswered(true)
       return ans
     }
 
@@ -243,6 +246,7 @@ export default function App(){
       let ans = Number(first) - Number(second)
       setInput(ans.toString())
       setSecond('')
+      setAnswered(true)
       return ans
     }
 
@@ -251,6 +255,7 @@ export default function App(){
       let ans = Number(first) * Number(second)
       setInput(ans.toString())
       setSecond('')
+      setAnswered(true)
       return ans
     }
 
@@ -259,8 +264,10 @@ export default function App(){
       let ans = Number(first) / Number(second)
       setInput(ans.toString())
       setSecond('')
+      setAnswered(true)
       return ans
     }
+
   }
 
   /*operations*/
