@@ -93,7 +93,10 @@ export default function App(){
       setFirstFilled(true)
       setOperation('subtraction')
       setInput('')
-    }else{
+    } else if(!input){
+      setInput(input + "-")
+    }
+    else{
       setOperation('subtraction')
       setFirstFilled(true)
       setInput('')
@@ -214,7 +217,8 @@ function moveSlider(){
       </div>
     </div>
     <div className={calculatorTheme}>
-      <input  value={!input?"0":input}   />
+      {/*<input  value={!input?"0":input}   />*/}
+      <div className="input">{!input?"0":input}</div>
       <br />
       <div className="buttons">
         <button onClick={()=>inputSeven()}>7</button>

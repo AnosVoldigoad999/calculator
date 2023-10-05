@@ -19,7 +19,7 @@ body{
   flex-direction: column;
   margin: 0 auto;
   width: fit-content;
-  min-width: 300px;
+  min-width: 400px;
 }
 .headerOne{
   display: flex;
@@ -41,9 +41,9 @@ body{
   grid-template-columns: 25% 25% 25% 25%;
   row-gap: 15px;
   border-radius: 7px;
-  column-gap: 5px;
   background-color: hsl(223, 31%, 20%);
-  padding: 25px;
+  column-gap: 15px;
+  padding: 25px 40px;
 }
 
 .reset{
@@ -68,15 +68,17 @@ body{
   color: hsl(0, 0%, 100%);
 }
 
-input{
+.input{
   border: none;
   outline: none;
   padding: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
   border-radius: 7px;
   background-color: hsl(224, 36%, 15%);
   font-size: 32px;
   color:  hsl(0, 0%, 100%);
-  font-family: league;
 }
 
 button{
@@ -149,7 +151,7 @@ button{
   flex-direction: column;
   margin: 0 auto;
   width: fit-content;
-  min-width: 300px;
+  min-width: 400px;
 }
 .headerTwo{
   display: flex;
@@ -171,9 +173,9 @@ button{
   grid-template-columns: 25% 25% 25% 25%;
   row-gap: 15px;
   border-radius: 7px;
-  column-gap: 5px;
   background-color:  hsl(0, 5%, 81%);
-  padding: 25px;
+  column-gap: 15px;
+  padding: 25px 40px;
 }
 
 .calculatorTwo .buttons .reset{
@@ -198,7 +200,7 @@ button{
   color: hsl(0, 0%, 100%);
 }
 
-.containerTwo input{
+.containerTwo .input{
   border: none;
   outline: none;
   padding: 25px;
@@ -206,7 +208,6 @@ button{
   background-color: hsl(0, 0%, 100%);
   font-size: 32px;
   color:hsl(60, 10%, 19%);
-  font-family: league;
 }
 
 .calculatorTwo .buttons button{
@@ -260,7 +261,7 @@ button{
   flex-direction: column;
   margin: 0 auto;
   width: fit-content;
-  min-width: 300px;
+  min-width: 400px;
 }
 .headerThree{
   display: flex;
@@ -282,9 +283,9 @@ button{
   grid-template-columns: 25% 25% 25% 25%;
   row-gap: 15px;
   border-radius: 7px;
-  column-gap: 5px;
   background-color:  hsl(268, 71%, 12%);
-  padding: 25px;
+  column-gap: 15px;
+  padding: 25px 40px;
 }
 
 .calculatorThree .buttons .reset{
@@ -309,7 +310,7 @@ button{
   color: hsl(198, 20%, 13%);
 }
 
-.containerThree input{
+.containerThree .input{
   border: none;
   outline: none;
   padding: 25px;
@@ -317,7 +318,6 @@ button{
   background-color: hsl(268, 71%, 12%);
   font-size: 32px;
   color:hsl(52, 100%, 62%);
-  font-family: league;
 }
 
 .calculatorThree .buttons button{
@@ -435,3 +435,99 @@ button:hover{
   cursor: pointer;
 }
 /*active*/
+
+
+
+/*mobile*/
+
+@media (max-width:600px){
+  .containerOne{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: fit-content;
+    min-width: 0px;
+  }
+  
+
+  
+  .reset{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: hsl(225, 21%, 49%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0 3px hsl(224, 28%, 35%);
+    font-size: 20px;
+  }
+  
+  .del{
+    background-color: hsl(225, 21%, 49%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0 3px hsl(224, 28%, 35%);
+    font-size: 20px;
+  }
+  
+  
+  /*themeTwo*/
+  .containerTwo{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: fit-content;
+    min-width: 0px;
+  }
+  
+
+  
+  .calculatorTwo .buttons .reset{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: hsl(185, 42%, 37%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0 3px hsl(185, 58%, 25%);
+    font-size: 20px;
+  }
+  
+  .calculatorTwo .buttons .del{
+    background-color: hsl(185, 42%, 37%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0 3px hsl(185, 58%, 25%);
+    font-size: 20px;
+  }
+  
+  
+  /*themeTwo*/
+  
+  
+  /*themethree*/
+  
+  .containerThree{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: fit-content;
+    min-width: 0px;
+  }
+
+ 
+  
+  .calculatorThree .buttons .reset{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: hsl(281, 89%, 26%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0 3px hsl(285, 91%, 52%);
+    font-size: 20px;
+  }
+  
+  .calculatorThree .buttons .del{
+    background-color: hsl(281, 89%, 26%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0 3px hsl(285, 91%, 52%);
+    font-size: 20px;
+  }
+  
+  /*themethree*/
+  
+  
+}
