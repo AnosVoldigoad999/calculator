@@ -21,10 +21,13 @@ export default function App(){
   useEffect(()=>{
   if(!firstFilled){
     setFirst(input)
-  } else{
+  }
+   else{
     setSecond(input)
   }
   }, [input])
+
+
 
   /*numbers*/
   function inputOne(){
@@ -67,7 +70,11 @@ export default function App(){
     setFirstFilled(false)
   }
   function del(){
- setInput( input.substring(0, input.length-1))
+    if(first){
+      reset()
+    }else{
+      setInput( input.substring(0, input.length-1))
+    }
   }
   /*numbers*/
 
@@ -135,7 +142,6 @@ export default function App(){
       setFirstFilled(false)
       let ans = Number(first) + Number(second)
       setInput(ans.toString())
-      console.log(first)
       setSecond('')
       return ans
     }
@@ -144,7 +150,7 @@ export default function App(){
       setFirstFilled(false)
       let ans = Number(first) - Number(second)
       setInput(ans.toString())
-      console.log(first)
+      setSecond('')
       return ans
     }
 
@@ -152,6 +158,7 @@ export default function App(){
       setFirstFilled(false)
       let ans = Number(first) * Number(second)
       setInput(ans.toString())
+      setSecond('')
       return ans
     }
 
@@ -159,6 +166,7 @@ export default function App(){
       setFirstFilled(false)
       let ans = Number(first) / Number(second)
       setInput(ans.toString())
+      setSecond('')
       return ans
     }
   }
