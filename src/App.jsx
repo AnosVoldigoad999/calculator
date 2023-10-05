@@ -5,14 +5,94 @@ export default function App(){
   let values = []
   const [firstFilled, setFirstFilled] = useState(false)
   const [operation, setOperation] = useState()
-  const[slideron, setSliderOn] = useState(1)
-  const [containerTheme, setContainerTheme] = useState('containerOne')
-  const [headerTheme, setHeaderTheme] = useState("headerOne")
-  const [themeTheme, setThemeTheme] = useState("themeOne")
-  const [themeNumbersTheme, setThemeNumbersTheme] = useState('themenumbersone')
-  const [sliderTheme, setSliderTheme] = useState('sliderOne')
-  const [calculatorTheme, setCalculatorTheme] = useState('calculatorOne')
-  const [circle, setCircle] = useState('circleOne')
+  const[slideron, setSliderOn] = useState(()=>{
+    let gottenslider = JSON.parse(localStorage.getItem('sliderOn'))
+    if(!gottenslider){
+      return 1
+    } else{
+      return gottenslider
+    }
+  })
+  useEffect(()=>{
+    localStorage.setItem('sliderOn', JSON.stringify(slideron))
+  }, [slideron])
+  const [containerTheme, setContainerTheme] = useState(()=>{
+    if(slideron === 1){
+      return 'containerOne'
+    }
+    if (slideron === 2){
+      return 'containerTwo'
+    }
+    if (slideron === 3){
+      return 'containerThree'
+    }
+  })
+  const [headerTheme, setHeaderTheme] = useState(()=>{
+    if(slideron === 1){
+      return "headerOne"
+    }
+    if (slideron === 2){
+      return "headerTwo"
+    }
+    if (slideron === 3){
+      return "headerThree"
+    }
+  })
+  const [themeTheme, setThemeTheme] = useState(()=>{
+    if(slideron === 1){
+      return "themeOne"
+    }
+    if (slideron === 2){
+      return "themeTwo"
+    }
+    if (slideron === 3){
+      return "themeThree"
+    }
+  })
+  const [themeNumbersTheme, setThemeNumbersTheme] = useState(()=>{
+    if(slideron === 1){
+      return 'themenumbersone'
+    }
+    if (slideron === 2){
+      return 'themenumberstwo'
+    }
+    if (slideron === 3){
+      return 'themenumbersthree'
+    }
+  })
+  const [sliderTheme, setSliderTheme] = useState(()=>{
+    if(slideron === 1){
+      return 'sliderOne'
+    }
+    if (slideron === 2){
+      return 'sliderTwo'
+    }
+    if (slideron === 3){
+      return 'sliderThree'
+    }
+  })
+  const [calculatorTheme, setCalculatorTheme] = useState(()=>{
+    if(slideron === 1){
+      return 'calculatorOne'
+    }
+    if (slideron === 2){
+      return 'calculatorTwo'
+    }
+    if (slideron === 3){
+      return 'calculatorThree'
+    }
+  })
+  const [circle, setCircle] = useState(()=>{
+    if(slideron === 1){
+      return 'circleOne'
+    }
+    if (slideron === 2){
+      return 'circleTwo'
+    }
+    if (slideron === 3){
+      return 'circleThree'
+    }
+  })
   /*const [values, setVaules] = useState([])*/
   const [input, setInput] = useState("")
   const [first, setFirst] = useState()
@@ -26,6 +106,18 @@ export default function App(){
     setSecond(input)
   }
   }, [input])
+
+  useEffect(()=>{
+    if(slideron === 1){
+      document.body.style.backgroundColor = 'hsl(222, 26%, 31%)'
+    }
+    if (slideron === 2){
+      document.body.style.backgroundColor = 'hsl(0, 0%, 90%)'
+    }
+    if (slideron === 3){
+      document.body.style.backgroundColor = 'hsl(268, 75%, 9%)'
+    }
+  }, [])
 
 
 
