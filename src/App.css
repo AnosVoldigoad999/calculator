@@ -79,13 +79,9 @@ body{
   background-color: hsl(224, 36%, 15%);
   font-size: 32px;
   color:  hsl(0, 0%, 100%);
-  overflow-x: scroll;
-  max-width: 400px;
 }
 
-.input::-webkit-scrollbar{
-  display:none;
-}
+
 
 button{
   padding: 10px;
