@@ -80,6 +80,7 @@ body{
   font-size: 32px;
   color:  hsl(0, 0%, 100%);
   overflow-x: scroll;
+  max-width: 400px;
 }
 
 .input::-webkit-scrollbar{
