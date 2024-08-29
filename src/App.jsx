@@ -176,31 +176,31 @@ export default function App(){
 
 
   const Addition = ()=>{
-    if(second){
-      setFirst(Equal())
-      setFirstFilled(true)
-      setOperation('addition')
-      setInput('')
-    }else{
-      setOperation('addition')
-      setFirstFilled(true)
-      setInput('')
+    if(second){ //if you've inputed the second number and still want to add a third number
+      setFirst(Equal())//call the equal function and save the returned value to the "first state"-representing the first number
+      setFirstFilled(true) //set firstfilled to true indicating that there's something in the "first" state, so whatever you're inputing next would be saved to the "Second" state
+      setOperation('addition') //set the operation to addition, letting the equal function know what you want to do
+      setInput('') //clear the "input" state
+    }else{ //if not
+      setOperation('addition') //set the operation to addition letting the "equal" function know what you want to do
+      setFirstFilled(true) //set first filled to true indicating that there's something in the "first" state
+      setInput('') //clear the "input" state
     }
   }
 
   const Subtraction = ()=>{
-    if(second){
-      setFirst(Equal())
-      setFirstFilled(true)
-      setOperation('subtraction')
-      setInput('')
-    } else if(!input){
-      setInput(input + "-")
+    if(second){ //if you've inputed the second number and still want to add a third number
+      setFirst(Equal()) //call the equal function and save the returned value to the "first state"-representing the first number
+      setFirstFilled(true)  //set firstfilled to true indicating that there's something in the "first" state
+      setOperation('subtraction') //set the operation to subtraction, letting the equal function know what you want to do
+      setInput('') //clear the "input" state
+    } else if(!input){ //if there's nothing in input
+      setInput(input + "-") //put a minus sign(in case you want to do something like -10+2 or something)
     }
-    else{
-      setOperation('subtraction')
-      setFirstFilled(true)
-      setInput('')
+    else{ //if not
+      setOperation('subtraction') //set the operation to subtraction, letting the equal function know what you want to do
+      setFirstFilled(true) //set firstfilled to true indicating that there's something in the "first" state
+      setInput('') //clear the "input" state
     }
   }
 
@@ -232,13 +232,13 @@ export default function App(){
 
 
   function Equal(){
-    if(operation==='addition'){
-      setFirstFilled(false)
-      let ans = Number(first) + Number(second)
-      setInput(ans.toString())
-      setSecond('')
-      setAnswered(true)
-      return ans
+    if(operation==='addition'){ //if the "operarion" state is set to addition
+      setFirstFilled(false) //set firstfilled to false, so the next time you input stuff it gets saved to the "first" state instead of the second
+      let ans = Number(first) + Number(second) //perform the operation
+      setInput(ans.toString()) //convert your answer back to a string and set the "input" state to its value (also saving the answer to the first state in the process...)
+      setSecond('') //reset the "second" state
+      setAnswered(true) //set the "answered" state to true(mainly used for the reset and delete functionalities)
+      return ans //return the answer(used in the various operations...check out the Addition() function to get a better understanding) 
     }
 
     if(operation==='subtraction'){
@@ -273,7 +273,7 @@ export default function App(){
   /*operations*/
 
   /*slider*/
-function moveSlider(){
+function moveSlider(){ //changing some states for the themes sha
   if(slideron === 1){
     setCircle('circleTwo')
     setSliderOn(2)
